@@ -3,18 +3,19 @@ import {quiz_numerique_responsable} from './questions.js'; // Import des questio
 // Récupérer les emplacements pour injecter la question et les options
 const questions = document.getElementById('question-text');
 const options = document.getElementById('options-container');
-console.log(quiz_numerique_responsable);
 
 // // Récupérer la première question
-// const firstQuestion = __________.questions[0];
+const firstQuestion = quiz_numerique_responsable.questions[0];
+console.log(firstQuestion);
+
 
 // // Injecter le texte de la question dans l'emplacement dédié
-// __________.innerText = __________;
-
+questions.innerText = firstQuestion.text;
+options.innerText = firstQuestion.options;
 // // Pour chaque option, créer un bouton et l'ajouter au conteneur
-// firstQuestion.__________.forEach(__________ => {
-//   const __________ = document.createElement('button');
-//   __________.innerText = __________;
-//   __________.classList.add('__________');
-//   __________.appendChild(__________);
-// });
+firstQuestion.options.forEach(reponse => {
+  const boutonOption = document.createElement('button');
+  options.innerText = firstQuestion.options;
+   options.classList.add('button');
+   options.appendChild(questions);
+ });
