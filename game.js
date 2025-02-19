@@ -1,36 +1,45 @@
-import { quiz_numerique_responsable } from './questions.js'; // Import des questions
+import { quiz_numerique_responsable } from "./questions.js"; // Import des questions
 
 let currentQuestionIndex = 0;
 
 // Récupérer les emplacements pour injecter la question et les options
-const questions = document.getElementById('question-text');
-const options = document.getElementById('options-container');
-const suivant = document.getElementById('next-button');
-const rejouer = document.getElementById('replay-button')
+const questions = document.getElementById("question-text");
+const options = document.getElementById("options-container");
+const suivant = document.getElementById("next-button");
+const rejouer = document.getElementById("replay-button");
 
 function loadQuestion() {
-  options.innerHTML = '';
+  options.innerHTML = "";
 
-  // // Récupérer la première questio0
+  // Récupérer la première question
   const currentQuestion = quiz_numerique_responsable.questions[currentQuestionIndex];
-  console.log(currentQuestion)
-  // // Injecter le texte de la question dans l'emplacement dédié
+
+  // Injecter le texte de la question dans l'emplacement dédié
   questions.innerText = currentQuestion.text;
-  
-  // // Pour chaque option, créer un bouton et l'ajouter au conteneur
+
+  // Pour chaque option, créer un bouton et l'ajouter au conteneur
   currentQuestion.options.forEach((reponse) => {
-    const boutonOption = document.createElement('button');
+    const boutonOption = document.createElement("button");
     
     boutonOption.innerText = reponse;
-  
+
     boutonOption.classList.add('button');
-  
+
+    // Bouton suivant disabled 
+    suivant.disabled = true
+
+    boutonOption.addEventListener('click', () => { 
+      checkAnswer(reponse) 
+      suivant.disabled = false 
+    })
+
+    // suivant.disabled = false
     options.appendChild(boutonOption);
   });
 }
 
 // Ajouter un écouteur d'événements pour le bouton "Suivant"
-suivant.addEventListener('click', () => {
+suivant.addEventListener("click", () => {
   // Incrémenter l'index de la question
   currentQuestionIndex++;
 
@@ -40,17 +49,32 @@ suivant.addEventListener('click', () => {
     loadQuestion();
   } else {
     // Si plus de questions, indiquer la fin du quiz
-    questions.innerText = 'Fin';
-    options.innerHTML = ''; // Effacer les options
-    suivant.style.display = 'none'; // Cacher le bouton Suivant
-    rejouer.style.display = 'inline-block';
+    questions.innerText = "Fin";
+    options.innerHTML = ""; // Effacer les options
+    suivant.style.display = "none"; // Cacher le bouton Suivant
+    rejouer.style.display = "inline-block";
   }
 });
-rejouer.addEventListener('click', ()=>{
-  currentQuestionIndex=0
-  rejouer.style.display="none";
-  suivant.style.display="inline-block";
-  loadQuestion()
-})
+
+rejouer.addEventListener("click", () => {
+  currentQuestionIndex = 0;
+  rejouer.style.display = "none";
+  suivant.style.display = "inline-block";
+  loadQuestion();
+});
+
+function checkAnswer (reponse) {
+  const bonneReponse = quiz_numerique_responsable.questions[currentQuestionIndex].correct_answer
+  // console.log({mareponse: bonneReponse});
+  // console.log({user: reponse});
+  
+  if (reponse === bonneReponse) {
+    console.log("vrai");
+
+  } else {
+    console.log("faux");
+  }
+}
+
 // Charger la première question au chargement de la page
-loadQuestion()
+loadQuestion();
