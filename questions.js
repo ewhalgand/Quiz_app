@@ -24,7 +24,7 @@ export const quiz_numerique_responsable = {
         text: "Et selon vous, combien jetons-nous de PC chaque année ?",
         options: [
           "350 millions",
-          "35 millions<",
+          "35 millions",
           "5 millions",
           "2 millions"
         ],
@@ -53,7 +53,7 @@ export const quiz_numerique_responsable = {
       {
         text: "Quel est Le nombre de smartphones achetés dans le monde chaque seconde ?",
         options: [
-          "1OO smartphones",
+          "100 smartphones",
           "60 smartphones",
           "40 smartphones",
           "20 smartphones"
@@ -63,7 +63,7 @@ export const quiz_numerique_responsable = {
       {
         text: "En 2020 combien d'objets étaient connectés ?",
         options: [
-          "1OO millions",
+          "100 millions",
           "50 milliards",
           "300 milliards",
           "500 milliards"
