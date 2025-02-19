@@ -1,14 +1,15 @@
-import { quiz_numerique_responsable } from "./questions.js"; // Import des questions
+import { quiz_numerique_responsable } from './questions.js'; // Import des questions
 
 let currentQuestionIndex = 0;
 
 // Récupérer les emplacements pour injecter la question et les options
-const questions = document.getElementById("question-text");
-const options = document.getElementById("options-container");
-const suivant = document.getElementById("next-button");
+const questions = document.getElementById('question-text');
+const options = document.getElementById('options-container');
+const suivant = document.getElementById('next-button');
+const rejouer = document.getElementById('replay-button')
 
 function loadQuestion() {
-  options.innerHTML = "";
+  options.innerHTML = '';
 
   // // Récupérer la première questio0
   const currentQuestion = quiz_numerique_responsable.questions[currentQuestionIndex];
@@ -18,11 +19,11 @@ function loadQuestion() {
   
   // // Pour chaque option, créer un bouton et l'ajouter au conteneur
   currentQuestion.options.forEach((reponse) => {
-    const boutonOption = document.createElement("button");
+    const boutonOption = document.createElement('button');
     
     boutonOption.innerText = reponse;
   
-    boutonOption.classList.add("button");
+    boutonOption.classList.add('button');
   
     options.appendChild(boutonOption);
   });
@@ -42,8 +43,14 @@ suivant.addEventListener('click', () => {
     questions.innerText = 'Fin';
     options.innerHTML = ''; // Effacer les options
     suivant.style.display = 'none'; // Cacher le bouton Suivant
+    rejouer.style.display = 'inline-block';
   }
 });
-
+rejouer.addEventListener('click', ()=>{
+  currentQuestionIndex=0
+  rejouer.style.display="none";
+  suivant.style.display="inline-block";
+  loadQuestion()
+})
 // Charger la première question au chargement de la page
 loadQuestion()
