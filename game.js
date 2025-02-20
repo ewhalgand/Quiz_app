@@ -1,7 +1,4 @@
 import { quiz_numerique_responsable } from "./questions.js"; // Import des questions
-const MyPromise = require('some-promise-lib');
-const confetti = require('canvas-confetti');
-confetti.Promise = MyPromise;
 
 let currentQuestionIndex = 0;
 let score =0 
@@ -12,6 +9,7 @@ const options = document.getElementById("options-container");
 const suivant = document.getElementById("next-button");
 const rejouer = document.getElementById("replay-button");
 const scoreContainer = document.getElementById("score-container");
+const canvas = document.querySelector('#confetti-canvas');
 
 function loadQuestion() {
   options.innerHTML = "";
@@ -67,6 +65,7 @@ suivant.addEventListener("click", () => {
     options.innerHTML = ""; // Effacer les options
     suivant.style.display = "none"; // Cacher le bouton Suivant
     rejouer.style.display = "inline-block";
+    rejouer.disabled = false;
   }
 });
 
@@ -86,13 +85,23 @@ function checkAnswer (reponse) {
   if (reponse === bonneReponse) {
     console.log("vrai");
     score++;
-    confetti();
-
+    onButtonClick()
   } else {
     console.log("faux");
     
   }
   scoreContainer.innerText = `Score: ${score}`;
+}
+
+function onButtonClick(){
+  const myConfetti = confetti.create(canvas, {
+    resize: true,
+    useWorker: true
+  });
+  myConfetti({
+    particleCount: 100,
+    spread: 160
+  });
 }
 
 // Charger la première question au chargement de la page
