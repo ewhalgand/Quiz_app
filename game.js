@@ -40,7 +40,7 @@ function loadQuestion() {
 
       // bouton "suivant" activé
       suivant.disabled = false
-      // Couleur des bordures
+      // // Couleur des bordures
       reponse !== currentQuestion.correct_answer ? boutonOption.style.borderColor = 'red' : boutonOption.style.borderColor
       reponse === currentQuestion.correct_answer ? boutonOption.style.borderColor = 'green' : boutonOption.style.borderColor  
     })
@@ -48,6 +48,17 @@ function loadQuestion() {
     // suivant.disabled = false
     options.appendChild(boutonOption);
   });
+  updateProgressBar();
+}
+
+// Fonction pour mettre à jour la barre de progression
+function updateProgressBar() {
+  const totalQuestions = quiz_numerique_responsable.questions.length;
+  const progress = (currentQuestionIndex / totalQuestions) * 100; // Calcul du pourcentage de progression
+  const progressBar = document.getElementById("progress-bar");
+
+  // Mettre à jour la largeur de la barre de progression
+  progressBar.style.width = `${progress}%`;
 }
 
 // Ajouter un écouteur d'événements pour le bouton "Suivant"
@@ -66,6 +77,7 @@ suivant.addEventListener("click", () => {
     suivant.style.display = "none"; // Cacher le bouton Suivant
     rejouer.style.display = "inline-block";
     rejouer.disabled = false;
+     questions.innerText = `Vous avez obtenu ${score} points sur ${quiz_numerique_responsable.questions.length}`;
   }
 });
 

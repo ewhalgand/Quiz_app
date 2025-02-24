@@ -5,15 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Game</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.cdnfonts.com/css/futura-display" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8ff6d6aabc.js" crossorigin="anonymous"></script>
   </head>
-    <body>
 
-      <div id="quiz-container">
-      
+    <body>
+      <main>
+      <header>
+
+      </header>
+    
+      <div id ="quiz-container">
+        <h1>QUIZ GAME</h1>
+        <h2>Testez vos connaissances en numérique responsable</h2>
+      <div class="question-container">
+        <div class="onglet">
+          <span class="round"></span>
+          <span class="cross"><i class="fa-solid fa-xmark"></i></span>
+        </div>
         <div class="question" id="question-text">
           <!-- La question sera injectée ici par JavaScript -->
         </div>
-    
+      </div>
+        
+
         
         <div class="options" id="options-container">
           <!-- Les options seront injectées ici par JavaScript -->
@@ -26,8 +41,12 @@
         </div>
         <div id="score-container">score: 0 </div>
         <div id="messageDeFin"> </div>
+        <div id="progress-bar-container">
+          <div id="progress-bar"></div>
+        </div>
       </div>
-    
+
+    </main>
     <!-- Importe ici ton fichier JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
     <script type="module" src="game.js"></script>
