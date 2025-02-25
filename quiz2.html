@@ -10,51 +10,45 @@
     <script src="https://kit.fontawesome.com/8ff6d6aabc.js" crossorigin="anonymous"></script>
   </head>
 
-    <body>
-      <main>
-      <header>
-
-      </header>
-    
+  <body>
+    <main>
       <div id ="quiz-container">
         <h1>QUIZ GAME</h1>
         <h2>Testez vos connaissances en numérique responsable</h2>
-      <div class="question-container">
-        <div class="onglet">
-          <div class="rondCroix">
-          <span class="round"></span>
-          <!-- <div id="timer-container">Timer: 0 </div>
-          <div id="progress-bar-container">
-            <div id="progress-bar"></div>
+      
+        <div class="question-container">
+
+          <div class="onglet">
+            <div class="rondCroix">
+            <span class="round"></span>
+            <span class="cross"><i class="fa-solid fa-xmark"></i></span>
           </div>
-          <div id="score-container">Score: 0 </div> -->
-          <span class="cross"><i class="fa-solid fa-xmark"></i></span>
-        </div>
-        <div class="progress">
-          <!-- La question sera injectée ici par JavaScript -->
-        <div id="timer-container">Timer: 0 </div>
-          <div id="progress-bar-container">
-            <div id="progress-bar"></div>
+
+            <div class="progress">
+              <div id="timer-container">Timer: 0 </div>
+              <div id="progress-bar-container">
+              <div id="progress-bar"></div>
+              </div>
+              <div id="score-container">Score: 0 </div> 
+            </div> 
           </div>
-          <div id="score-container">Score: 0 </div> 
-        </div> 
+
+          <div class="question" id="question-text">
+            <!-- La question sera injectée ici par JavaScript -->
           </div>
-        <div class="question" id="question-text">
-          <!-- La question sera injectée ici par JavaScript -->
-        </div>
       </div>
         
 
         
-        <div class="options" id="options-container">
-          <!-- Les options seront injectées ici par JavaScript -->
-        </div>
+      <div class="options" id="options-container">
+            <!-- Les options seront injectées ici par JavaScript -->
+      </div>
     
       
-        <div class="button-container">
-          <button id="next-button">Suivant</button>
-          <button id="replay-button" style="display: none;">Rejouer</button> 
-        </div>
+      <div class="button-container">
+        <button id="next-button">Suivant</button>
+        <button id="replay-button" style="display: none;">Rejouer</button> 
+      </div>
       </div>
 
     </main>
@@ -76,5 +70,4 @@
     }
     </style>
   <body>
-  
 </html>
