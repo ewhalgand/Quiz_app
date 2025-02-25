@@ -91,9 +91,7 @@ rejouer.addEventListener("click", () => {
 
 function checkAnswer (reponse) {
   const bonneReponse = quiz_numerique_responsable.questions[currentQuestionIndex].correct_answer
-  // console.log({mareponse: bonneReponse});
-  // console.log({user: reponse});
-  
+
   if (reponse === bonneReponse) {
     console.log("vrai");
     score++;
