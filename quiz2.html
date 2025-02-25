@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Game</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleCopie.css">
     <link href="https://fonts.cdnfonts.com/css/futura-display" rel="stylesheet">
     <script src="https://kit.fontawesome.com/8ff6d6aabc.js" crossorigin="anonymous"></script>
   </head>
@@ -20,24 +20,9 @@
         <h2>Testez vos connaissances en numérique responsable</h2>
       <div class="question-container">
         <div class="onglet">
-          <div class="rondCroix">
           <span class="round"></span>
-          <!-- <div id="timer-container">Timer: 0 </div>
-          <div id="progress-bar-container">
-            <div id="progress-bar"></div>
-          </div>
-          <div id="score-container">Score: 0 </div> -->
           <span class="cross"><i class="fa-solid fa-xmark"></i></span>
         </div>
-        <div class="progress">
-          <!-- La question sera injectée ici par JavaScript -->
-        <div id="timer-container">Timer: 0 </div>
-          <div id="progress-bar-container">
-            <div id="progress-bar"></div>
-          </div>
-          <div id="score-container">Score: 0 </div> 
-        </div> 
-          </div>
         <div class="question" id="question-text">
           <!-- La question sera injectée ici par JavaScript -->
         </div>
@@ -54,12 +39,17 @@
           <button id="next-button">Suivant</button>
           <button id="replay-button" style="display: none;">Rejouer</button> 
         </div>
+        <div id="score-container">score: 0 </div>
+        <div id="messageDeFin"> </div>
+        <div id="progress-bar-container">
+          <div id="progress-bar"></div>
+        </div>
       </div>
-
+      <a href="pageScoreCopie.html">Score</a>
     </main>
     <!-- Importe ici ton fichier JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
-    <script type="module" src="game.js"></script>
+    <script type="module" src="gameCopie.js"></script>
 
   
     <!-- CSS -->
