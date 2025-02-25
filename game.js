@@ -1,7 +1,9 @@
 import { quiz_numerique_responsable } from "./questions.js"; // Import des questions
 
 let currentQuestionIndex = 0;
-let score =0 
+let score =0
+let timeRemaining = 1; //temps de réponse en secondes avant blocage des propositions
+let timerInterval; //  variable utile pour mettre à jour le timer toute les secondes
 
 // Récupérer les emplacements pour injecter la question et les options
 const questions = document.getElementById("question-text");
@@ -11,8 +13,48 @@ const rejouer = document.getElementById("replay-button");
 const scoreContainer = document.getElementById("score-container");
 const canvas = document.querySelector('#confetti-canvas');
 
+
+
+
+// Fonction pour démarrer le timer
+function startTimer() {
+  // Réinitialiser le temps restant à 10 secondes à chaque nouvelle question
+  timeRemaining = 11;
+
+  timerInterval = setInterval(() => {
+    if (timeRemaining > 0) {
+      timeRemaining--; // "timeRemaning" décrémente la variable de 1 "--"réduire la valeur d'une variable de 1 à chaque fois qu'il est exécuté.
+      document.getElementById('timer-container').innerText = `Temps restant: ${timeRemaining}s`; // Afficher le temps restant
+    } else {
+      // Quand le temps est écoulé, les boutons sont bloqués et on passe à la question suivante
+      clearInterval(timerInterval);
+      blockOptions();
+      suivant.disabled = false; // Le bouton "Suivant" devient actif
+    }
+  }, 1000); // Met à jour toutes les secondes
+}
+
+//Fonction pour bloquer les options
+function blockOptions() {
+  const allButtons = document.querySelectorAll("button");
+  allButtons.forEach((button) => {
+    button.disabled = true; // Désactiver tous les boutons
+  });
+}
+
+
+
 function loadQuestion() {
   options.innerHTML = "";
+  suivant.disabled = true; // Désactiver le bouton "Suivant" au début de la question
+
+  // Démarrer le timer pour la nouvelle question
+  startTimer();
+
+    // Démarrer le timer au premier chargement
+    if (currentQuestionIndex === 0) {
+      //startTimer(); // Démarrer le timer
+    }
 
   // Récupérer la première question
   const currentQuestion = quiz_numerique_responsable.questions[currentQuestionIndex];
@@ -32,12 +74,13 @@ function loadQuestion() {
     suivant.disabled = true
     boutonOption.addEventListener('click', () => { 
       checkAnswer(reponse) 
-      //  // Désactiver tous les boutons après le choix
+      // Désactiver tous les boutons après le choix
     const allButtons = document.querySelectorAll('button');
     allButtons.forEach(btn => {
     btn.disabled = true; // Désactiver tous les boutons après sélection
   });
-
+  clearInterval(timerInterval); // Arrêter le timer dès que l'utilisateur clique sur une option
+      blockOptions(); // Bloquer les options
       // bouton "suivant" activé
       suivant.disabled = false
       // // Couleur des bordures
@@ -84,6 +127,7 @@ suivant.addEventListener("click", () => {
 rejouer.addEventListener("click", () => {
   currentQuestionIndex = 0;
   score =0;
+  timeRemaining = 60; // Réinitialise le timer
   rejouer.style.display = "none";
   suivant.style.display = "inline-block";
   loadQuestion();
