@@ -97,12 +97,10 @@ function loadQuestion() {
 // Fonction pour mettre à jour la barre de progression
 function updateProgressBar() {
   const totalQuestions = quiz_numerique_responsable.questions.length;
-  const progress = (currentQuestionIndex / totalQuestions) * 108; // Calcul du pourcentage de progression
-  const progressBar = document.getElementById("progress-bar");
-console.log(progress);
+  const progress = ((currentQuestionIndex+1)/ totalQuestions) *100
+console.log(progress);}
   // Mettre à jour la largeur de la barre de progression
   progressBar.style.width = `${progress}%`;
-}
 
 // Ajouter un écouteur d'événements pour le bouton "Suivant"
 suivant.addEventListener("click", () => {
