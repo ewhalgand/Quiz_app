@@ -50,7 +50,7 @@ function loadQuestion() {
 
   // Démarrer le timer pour la nouvelle question
   startTimer();
-  
+
   // Récupérer la première question
   const currentQuestion = quiz_numerique_responsable.questions[currentQuestionIndex];
 
@@ -108,13 +108,11 @@ suivant.addEventListener("click", () => {
     // Afficher la question suivante
     loadQuestion();
   } else {
-    // Si plus de questions, indiquer la fin du quiz
-    questions.innerText = "Fin";
     options.innerHTML = ""; // Effacer les options
     suivant.style.display = "none"; // Cacher le bouton Suivant
     rejouer.style.display = "inline-block";
     rejouer.disabled = false;
-     questions.innerText = `Vous avez obtenu ${score} points sur ${quiz_numerique_responsable.questions.length}`;
+    questions.innerText = `Vous avez obtenu ${score} points sur ${quiz_numerique_responsable.questions.length}`;
   }
 });
 

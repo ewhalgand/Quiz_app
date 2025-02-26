@@ -99,8 +99,6 @@ suivant.addEventListener("click", () => {
     // Afficher la question suivante
     loadQuestion();
   } else {
-    // Si plus de questions, indiquer la fin du quiz
-    questions.innerText = "Fin";
     options.innerHTML = ""; // Effacer les options
     suivant.style.display = "none"; // Cacher le bouton Suivant
     rejouer.style.display = "inline-block";
