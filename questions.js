@@ -1,7 +1,7 @@
 export const quiz_numerique_responsable = {
     questions: [
       {
-        text: "A votre avis, combien d’équipement(s) numérique(s) possède chaque français ?",
+        text: "À votre avis, combien d’équipement(s) numérique(s) possède chaque français ?",
         options: [
           "1",
           "3",
@@ -28,7 +28,7 @@ export const quiz_numerique_responsable = {
           "5 millions",
           "2 millions"
         ],
-        correct_answer: "35 millions<"
+        correct_answer: "35 millions"
       },
       {
         text: "Quelle part des données circulants sur internet la vidéo représente-elle ?",
@@ -82,7 +82,7 @@ export const quiz_numerique_responsable = {
       },
      
       {
-        text: " Quel est le taux de recyclage des déchets électroniques ?",
+        text: "Quel est le taux de recyclage des déchets électroniques ?",
         options: [
           "50,2%",
           "27,6%",
@@ -104,12 +104,12 @@ export const quiz_numerique_responsable = {
       {
         text: "Combien de matière faut-il pour fabriquer un smartphone de 5.5 pouces ? ",
         options: [
-          "4kg",
-          "10kg",
-          "200kg",
-          "3000KG"
+          "4 kg",
+          "10 kg",
+          "200 kg",
+          "3000 kg"
         ],
-        correct_answer: "200kg"
+        correct_answer: "200 kg"
       },
       {
         text: "Quel est le taux des emissions de gaz à effet de serre le Numérique produit-il ?",
