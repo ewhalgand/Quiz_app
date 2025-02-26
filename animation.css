@@ -19,24 +19,3 @@
   70% { transform: rotate(0deg) scale(1.2); }
   100% { transform: scale(1); }
 }
-/* button-container{
-    animation-duration: 3s;
-    animation-name: bounce;
-    animation-iteration-count: infinite; */
-/*     
-    @keyframes bounce {
-      to { transform: scale(1.2); }
-    }
-  }
-  @keyframes bounce {
-    from {
-      margin-left: 0%;
-      width: 100%;
-    }
-  
-    to {
-      margin-left: 0%;
-      width: 100%;
-    }
-  }
-   */
