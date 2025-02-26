@@ -49,7 +49,7 @@ export const quiz_numerique_responsable = {
           "100 millions"
         ],
         correct_answer: "281 milliards"
-      },
+      },/*
       {
         text: "Quel est Le nombre de smartphones achetés dans le monde chaque seconde ?",
         options: [
@@ -163,6 +163,6 @@ export const quiz_numerique_responsable = {
     //   },
    
 
-      // Autres questions...
+      // Autres questions...*/
     ]
   };
