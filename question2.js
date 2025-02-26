@@ -43,12 +43,12 @@ export const quiz_nintendo = {
     {
       text: "La Nintendo 64 à fait combien de vente en Europe dans sa première année ?",
       options: [
-        "326 Mille",
-        "751 Mille",
-        "1,7 Millions",
-        "2,3 Millions"
+        "326 mille",
+        "751 mille",
+        "1,7 millions",
+        "2,3 millions"
       ],
-      correct_answer: "2,3 Millions"
+      correct_answer: "2,3 millions"
     }
   //   {
   //     text: "",
