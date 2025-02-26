@@ -192,3 +192,17 @@ h2{
     font-size: 10px;
     margin-bottom: 30px;
 }
+
+/* Navbar */
+
+nav ul {
+   display: flex;
+   gap: 40px;
+   list-style: none;
+   padding-inline-start: 0;
+}
+
+nav ul li a {
+    color: #9F17E8;
+    font-size: 18px;
+}
