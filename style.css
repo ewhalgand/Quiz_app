@@ -197,6 +197,7 @@ h2{
 
 nav ul {
    display: flex;
+   justify-content: center;
    gap: 40px;
    list-style: none;
    padding-inline-start: 0;
