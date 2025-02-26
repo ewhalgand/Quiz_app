@@ -102,6 +102,7 @@ function checkAnswer (reponse) {
     
   }
   scoreContainer.innerText = `Score: ${score}`;
+  window.localStorage.setItem("score", score); // stocke la valeur du score dans le localStorage
 }
 
 function onButtonClick(){
