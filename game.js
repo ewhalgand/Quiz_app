@@ -50,11 +50,7 @@ function loadQuestion() {
 
   // Démarrer le timer pour la nouvelle question
   startTimer();
-
-    // Démarrer le timer au premier chargement
-    if (currentQuestionIndex === 0) {
-    }
-
+  
   // Récupérer la première question
   const currentQuestion = quiz_numerique_responsable.questions[currentQuestionIndex];
 

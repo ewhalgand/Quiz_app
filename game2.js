@@ -40,9 +40,6 @@ function blockOptions() {
 function loadQuestion() {
   options.innerHTML = "";
   suivant.disabled = true; // Désactiver le bouton "Suivant" au début de la question
-    // Démarrer le timer au premier chargement
-    if (currentQuestionIndex === 0) {
-    }
   // Démarrer le timer pour la nouvelle question
   startTimer();
   // Récupérer la première question
