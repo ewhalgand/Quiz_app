@@ -53,7 +53,6 @@ function loadQuestion() {
 
     // Démarrer le timer au premier chargement
     if (currentQuestionIndex === 0) {
-      //startTimer(); // Démarrer le timer
     }
 
   // Récupérer la première question
