@@ -29,7 +29,7 @@ export const quiz_numerique_responsable = {
           "2 millions"
         ],
         correct_answer: "35 millions"
-      },
+      },/*
       {
         text: "Quelle part des données circulants sur internet la vidéo représente-elle ?",
         options: [
@@ -49,7 +49,7 @@ export const quiz_numerique_responsable = {
           "100 millions"
         ],
         correct_answer: "281 milliards"
-      },/*
+      },git
       {
         text: "Quel est Le nombre de smartphones achetés dans le monde chaque seconde ?",
         options: [
