@@ -43,8 +43,8 @@ export const quiz_nintendo = {
     {
       text: "La Nintendo 64 à fait combien de vente en Europe dans sa première année ?",
       options: [
-        "326 Milles",
-        "751 Milles",
+        "326 Mille",
+        "751 Mille",
         "1,7 Millions",
         "2,3 Millions"
       ],
